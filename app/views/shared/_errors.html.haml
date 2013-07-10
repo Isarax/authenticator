@@ -1,0 +1,7 @@
+- if @user && @user.errors.any?
+  #error-explanation
+    .alert.alert-error
+      The form contains errors:
+      %ul
+        - @user.errors.full_messages.each do |msg|
+          %li= msg

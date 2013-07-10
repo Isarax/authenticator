@@ -1,0 +1,26 @@
+.span4.offset4
+  = bootstrap_flash
+  = render 'shared/errors'
+  .hero-unit
+    = form_for(@user, remote: true) do |f|
+      .control-group
+        .control-label
+          = f.label :name
+        .controls
+          = f.text_field :name
+      
+      .control-group
+        .control-label
+          = f.label :password
+        .controls
+          = f.password_field :password
+
+      .control-group
+        .control-label
+          = f.label :password_confirmation
+        .controls
+          = f.password_field :password_confirmation
+
+      .btn-group
+        = link_to('Back', root_path, class: 'btn', remote: true)
+        = f.submit('Sign Up', class: 'btn btn-primary', remote: true)

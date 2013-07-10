@@ -1,0 +1,10 @@
+.span4.offset4
+  = bootstrap_flash
+  .hero-unit
+    .row
+      %h3 Account settings
+    .row{ style: 'padding-bottom: 20px'}
+      %strong Name: 
+      = @user.name
+    .row
+      = link_to('Log out', log_out_path, class: 'btn btn-danger', remote: true)

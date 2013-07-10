@@ -1,0 +1,20 @@
+.span4.offset4
+  = bootstrap_flash
+  = render 'shared/errors'
+  .hero-unit
+    = form_tag(sessions_path, remote: true) do |f|
+      .control-group
+        .control-label
+          = label_tag :name
+        .controls
+          = text_field_tag :name, params[:name]
+      
+      .control-group
+        .control-label
+          = label_tag :password
+        .controls
+          = password_field_tag :password
+
+      .btn-group
+        = link_to('Back', root_path, class: 'btn', remote: true)
+        = submit_tag('Log in', class: 'btn btn-primary', remote: true)
